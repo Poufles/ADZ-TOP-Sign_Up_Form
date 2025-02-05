@@ -1,0 +1,89 @@
+@import url('https://fonts.cdnfonts.com/css/ysabeau-infant');
+
+:root {
+    --main-font: 'Ysabeau Infant', sans-serif;
+    --background-color: #fffbff;
+    font-family: var(--main-font);
+}
+
+body {
+    background-color: var(--background-color);
+}
+
+.main-container {
+    height: 100dvh;
+    display: flex;
+}
+
+.container.left {
+    border-right: 5px solid black;
+    padding: 60px 70px;
+    width: 60%;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+}
+
+.container.right {
+    /* border: 1px solid red; */
+    width: 40%;
+    position: relative;
+
+    img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        position: absolute;
+    }
+
+}
+
+form {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    height: 100%;
+}
+
+#title {
+    font-size: 4rem;
+    text-wrap: balance;
+}
+
+.container.inputs {
+    margin: 30px 0;
+    display: flex;
+    row-gap: 30px;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.inputs .input {
+    height: 50px;
+    width: 45%;
+    position: relative;
+    
+    label {
+        background-color: var(--background-color);
+        font-size: 1.2rem;
+        padding: 0 10px;
+        transform: translateY(50%);
+        position: absolute;
+        left: 2%;
+        bottom: 100%;
+    }
+    
+    input {
+        border: 2px solid black;
+        border-radius: 7px;
+        background-color: var(--background-color);
+        padding: 5px 20px 0;
+        height: 100%;
+        width: 100%;
+    }
+
+}
+
+.login p {
+    display: inline;
+}

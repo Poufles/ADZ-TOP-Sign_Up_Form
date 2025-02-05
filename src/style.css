@@ -62,7 +62,7 @@ form {
     height: 50px;
     width: 45%;
     position: relative;
-    
+
     label {
         background-color: var(--background-color);
         font-size: 1.2rem;
@@ -70,16 +70,56 @@ form {
         transform: translateY(50%);
         position: absolute;
         left: 2%;
-        bottom: 100%;
+        bottom: 50%;
+        transition: 0.2s;
+
+        &:has(+input:hover) {
+            left: 2%;
+            bottom: 100%;
+        }
+        
+        &:has(+input:not(:placeholder-shown)) {
+            left: 2%;
+            bottom: 100%;
+        }
     }
-    
+
     input {
+        box-shadow: 3px 3px 5px black;
         border: 2px solid black;
         border-radius: 7px;
         background-color: var(--background-color);
         padding: 5px 20px 0;
         height: 100%;
         width: 100%;
+        transition: 0.2s;
+
+        &[type=number]::-webkit-outer-spin-button,
+        &[type=number]::-webkit-inner-spin-button {
+            -webkit-appearance: none;
+            margin: 0;
+        }
+        
+        &[type=number] {
+            -moz-appearance: textfield;
+        }
+        
+        &:hover, &[type=number]:hover {
+            box-shadow: 3px 3px 5px orange;
+            border: 2px solid orange;
+        }
+
+        &::placeholder {
+            transition: 0.2s;
+        }
+
+        &:hover::placeholder {
+            opacity: 1;
+        }
+
+        &::placeholder {
+            opacity: 0;
+        }
     }
 
 }

@@ -1,2 +1,4 @@
 # ADZ-TOP-Sign_Up_Form
 A simple sign up form done for The Odin Project course on Intermediate HTML and CSS.
+
+(For those who love reading, ADZ is an abbreviation of "A partir de zero" meaning "Starting from Zero" in French. After a long, depressive, and tiring 7 months of doing nothing and being lost due to personal problems; I am pursuing this passion of mine starting with recollection of my previous knowledge in Web Development especially in the fundamentals. I'm hoping that this time, little by little, may I seem lost once again; I'll be capable of becoming a better web developer. I for sure know that it is weird to have this long and boring README.md but this shall be my redemption. May we all become better in the end. NO EXPECTATIONS, NO LIMITATIONS.)

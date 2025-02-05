@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="src/CSS-Reset-JC.css">
+    <link rel="stylesheet" href="src/style.css">
+    <title>WaToDo! - Sign Up Form</title>
+</head>
+
+<body>
+    <div class="main-container">
+        <div class="container left">
+            <form action="home.html" method="post">
+                <div class="container phrase">
+                    <p id="title">I hate making catchy phrases but WaToDo!</p>
+                </div>
+                <div class="container inputs">
+                    <div class="container name input">
+                        <label for="first-name">First Name</label>
+                        <input type="text" name="" id="first-name" placeholder="Dexrel" required>
+                    </div>
+                    <div class="container name input">
+                        <label for="last-name">Last Name</label>
+                        <input type="text" name="" id="last-name" placeholder="Lucius" required>
+                    </div>
+                    <div class="container email input">
+                        <label for="email">E-mail</label>
+                        <input type="email" name="" id="email" placeholder="youremail@example.com" required>
+                    </div>
+                    <div class="container phone-no input">
+                        <label for="phoneno">Phone No.</label>
+                        <!-- <label for="">&#40;optional&#41;</label> -->
+                        <input type="tel" name="" id="phoneno" placeholder="09x-xxx-xxxx" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" maxlength="12">
+                    </div>
+                    <div class="container password input">
+                        <label for="password">Password</label>
+                        <input type="password" name="" id="password" placeholder="" required>
+                    </div>
+                    <div class="container password input">
+                        <label for="confirmpass">Confirm Password</label>
+                        <input type="password" name="" id="confirmpass" placeholder="" required>
+                    </div>
+                </div>
+                <div class="container actions">
+                    <button type="reset">Reset All</button>
+                    <button type="submit">Sign Up!</button>
+                </div>
+            </form>
+            <div class="container login">
+                <p>Already got an account?</p>
+                <a href="http://" target="_blank" rel="noopener noreferrer">Log In!</a>
+            </div>
+        </div>
+        <div class="container right">
+            <img src="assets/wallhaven-xlgdzo.jpg" alt="An image of two people together watching a sunset over a city.">
+        </div>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,165 @@
+@import url('https://fonts.cdnfonts.com/css/ysabeau-infant');
+
+:root {
+    --main-font: 'Ysabeau Infant', sans-serif;
+    --background-color: #fffbff;
+    font-family: var(--main-font);
+}
+
+body {
+    background-color: var(--background-color);
+}
+
+.main-container {
+    height: 100dvh;
+    display: flex;
+}
+
+.container.left {
+    border-right: 5px solid black;
+    padding: 60px 70px;
+    width: 60%;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+}
+
+.container.right {
+    /* border: 1px solid red; */
+    width: 40%;
+    position: relative;
+
+    img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        position: absolute;
+    }
+
+}
+
+form {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    height: 100%;
+}
+
+#title {
+    font-size: 4.5rem;
+}
+
+.container.inputs {
+    margin: 30px 0;
+    display: flex;
+    row-gap: 30px;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.inputs .input {
+    height: 50px;
+    width: 45%;
+    position: relative;
+
+    label {
+        background-color: var(--background-color);
+        font-size: 1.2rem;
+        padding: 0 10px;
+        transform: translateY(50%);
+        position: absolute;
+        left: 2%;
+        bottom: 50%;
+        transition: 0.2s;
+
+        &:has(+input:hover) {
+            left: 2%;
+            bottom: 100%;
+        }
+        
+        &:has(+input:not(:placeholder-shown), +input:focus) {
+            left: 2%;
+            bottom: 100%;
+        }
+    }
+
+    input {
+        box-shadow: 3px 3px 5px black;
+        border: 2px solid black;
+        border-radius: 7px;
+        background-color: var(--background-color);
+        padding: 5px 20px 0;
+        height: 100%;
+        width: 100%;
+        transition: 0.2s;
+
+        &[type=number]::-webkit-outer-spin-button,
+        &[type=number]::-webkit-inner-spin-button {
+            -webkit-appearance: none;
+            margin: 0;
+        }
+        
+        &:hover, &:focus {
+            box-shadow: 3px 3px 5px orange;
+            border: 2px solid orange;
+            outline: none;
+        }
+
+        &::placeholder {
+            transition: 0.2s;
+        }
+
+        &:hover::placeholder, &:focus::placeholder {
+            opacity: 1;
+        }
+
+        &::placeholder {
+            opacity: 0;
+        }
+    }
+
+}
+
+form .actions {
+    display: flex;
+    justify-content: end;
+    gap: 15px;
+}
+
+form .actions button {
+    border-radius: 7px;
+    cursor: pointer;
+    font-size: 1.2rem;
+}
+
+form .actions button[type=reset] {
+    background-color: transparent;
+    border: none;
+    color: red;
+    padding: 5px 10px;
+    transition: 0.2s;
+
+    &:hover {
+        background-color: red;
+        color: var(--background-color);
+    }
+
+}
+
+form .actions button[type=submit] {
+    background-color: var(--background-color);
+    border: 2px solid black;
+    box-shadow: 3px 3px 5px black;
+    padding: 5px 30px;
+    transition: 0.2s;
+    
+    &:hover {
+        background-color: rgb(57, 255, 57);
+        color: var(--background-color)
+    }
+
+}
+
+.login p {
+    display: inline;
+}

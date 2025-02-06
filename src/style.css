@@ -3,6 +3,8 @@
 :root {
     --main-font: 'Ysabeau Infant', sans-serif;
     --background-color: #fffbff;
+    --color-valid: #39ff39;
+    --color-invalid: #dc2626;
     font-family: var(--main-font);
 }
 
@@ -81,6 +83,42 @@ form {
             left: 2%;
             bottom: 100%;
         }
+
+        &[for=phoneno] {
+
+            &::after {
+                content: "(Optional)";
+                background-color: inherit;
+                color: gray;
+                font-size: 0.9rem;
+                padding-right: inherit;
+                opacity: 0;
+                display: none;
+                transition-property: display opacity;
+                transition-duration: 0.2s;
+                transition-behavior: allow-discrete;
+                position: absolute;
+                transform: translateY(-50%);
+                left: 100%;
+                top: 50%;
+            }
+
+            &:has(+input:hover)::after {
+                opacity: 1;
+                display: block;
+
+                @starting-style {
+                    opacity: 0;
+                }
+            }
+
+            &:has(+input:not(:placeholder-shown), +input:focus)::after {
+                opacity: 1;
+                display: block;
+            }
+
+        }
+
     }
 
     input {
@@ -112,10 +150,21 @@ form {
         &:hover::placeholder, &:focus::placeholder {
             opacity: 1;
         }
-
+        
         &::placeholder {
             opacity: 0;
         }
+        
+        &:not(:placeholder-shown):valid {
+            box-shadow: 3px 3px 5px var(--color-valid);
+            border: 2px solid var(--color-valid);
+        }
+        
+        &:not(:placeholder-shown):invalid {
+            box-shadow: 3px 3px 5px var(--color-invalid);
+            border: 2px solid var(--color-invalid);
+        }
+
     }
 
 }
@@ -135,12 +184,12 @@ form .actions button {
 form .actions button[type=reset] {
     background-color: transparent;
     border: none;
-    color: red;
+    color: var(--color-invalid);
     padding: 5px 10px;
     transition: 0.2s;
 
     &:hover {
-        background-color: red;
+        background-color: var(--color-invalid);
         color: var(--background-color);
     }
 
@@ -154,7 +203,7 @@ form .actions button[type=submit] {
     transition: 0.2s;
     
     &:hover {
-        background-color: rgb(57, 255, 57);
+        background-color: var(--color-valid);
         color: var(--background-color)
     }
 
